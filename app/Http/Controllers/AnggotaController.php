@@ -99,7 +99,7 @@ class AnggotaController extends Controller
         $query = $request->input('query'); 
 
         $anggotas = Anggota::where('nama', 'like', '%'.$query.'%')->paginate(5); 
-        return view('anggotas.index', compact('anggota'));
+        
+        return view('anggotas.index', compact('anggotas'));
     }
-
 }

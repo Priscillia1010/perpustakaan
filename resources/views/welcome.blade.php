@@ -833,41 +833,28 @@
 <body class="antialiased">
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        <div class="navbar navbar-expand-lg text-left">
-            <a class="navbar-brand fs-5" href="{{ url('/') }}">
-                Perpustakaan
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            @if (Route::has('login'))
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
-                    <li>
-                        <a class="navbar-brand fs-5" href="{{ url('/bukus') }}">
-                            <span class="fs-6">Buku</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand fs-5" href="{{ url('/anggotas') }}">
-                            <span class="fs-6">Anggota</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand fs-5" href="{{ url('/raks') }}">
-                            <span class="fs-6">Rak</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navbar-brand fs-5" href="{{ url('/petugass') }}">
-                            <span class="fs-6">Petugas</span>
-                        </a>
-                    </li>
-                </ul>
+        <div
+            class="relative sm:flex sm:justify-between sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+            <div class="sm:fixed sm:top-0 sm:left-0 p-6 text-left z-10">
+                <a href="{{ url('/') }}"
+                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                    Perpustakaan</a>
+                <a href="{{ url('/bukus') }}"
+                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                    Buku</a>
+                <a href="{{ url('/petugass') }}"
+                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                    Petugas</a>
+                <a href="{{ url('/anggotas') }}"
+                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                    Anggota</a>
+                <a href="{{ url('/raks') }}"
+                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                    Rak</a>
             </div>
+
+            <!-- Right-aligned navbar (same as your existing code) -->
+            @if (Route::has('login'))
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                 @auth
                 <a href="{{ url('/home') }}"
@@ -884,12 +871,14 @@
                 @endauth
             </div>
             @endif
+
+            <!-- Rest of your content -->
         </div>
 
-        <div class="container">
-            <h1>Perpustakaan Nasional</h1>
+        <div class="max-w-7xl mx-auto p-6 lg:p-8">
+            <img src="https://4.bp.blogspot.com/-nz4DYl6UWwU/XJoDrG79MlI/AAAAAAAAAGs/bYa0AS_-vwIFfNb4Le4-GDg6cHZC7mNjwCLcBGAs/s1600/Perpustakaan%2BNasional%2BRepublik%2BIndonesia.png"
+                alt="" style="width: 600px; height: 500px;">
         </div>
-
     </div>
 </body>
 

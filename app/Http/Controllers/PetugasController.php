@@ -66,4 +66,13 @@ class PetugasController extends Controller
         return redirect()->route('petugass.index')
                          ->with('sukses', 'Petugas berhasil dihapus');
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query'); 
+
+        $petugass = Petugas::where('nama', 'like', '%'.$query.'%')->paginate(5); 
+        
+        return view('petugass.index', compact('petugass'));
+    }
 }

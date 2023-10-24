@@ -2,6 +2,15 @@
 
 @section('content')
 <h2 class="mb-3">Daftar Rak</h2>
+<form action="{{ route('raks.search') }}" method="GET">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Cari rak..." name="query" value="{{ request('query') }}">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary ml-3" type="submit">Cari</button>
+            <a href="{{ route('raks.index') }}" class="ml-3 btn btn-outline-secondary">Clear</a>
+        </div>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>

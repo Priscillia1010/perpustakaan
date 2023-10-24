@@ -68,4 +68,13 @@ class RakController extends Controller
         return redirect()->route('raks.index')
                          ->with('sukses', 'Rak berhasil dihapus');
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query'); 
+
+        $raks = Rak::where('nama', 'like', '%'.$query.'%')->paginate(5); 
+        
+        return view('raks.index', compact('raks'));
+    }
 }
